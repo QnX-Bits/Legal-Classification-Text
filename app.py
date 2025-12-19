@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
-
+import os
 app = Flask(__name__)
 
 # Load TF-IDF vectorizer từ notebook
@@ -58,4 +58,5 @@ def chat():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+
 
